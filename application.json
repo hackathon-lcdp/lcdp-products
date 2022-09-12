@@ -1,11 +1,11 @@
 {
   "pages": [
     {
-      "id": "Page1",
+      "id": "Product_List_Page",
       "isDefault": true
     },
     {
-      "id": "Page2",
+      "id": "New_Product_Page",
       "isDefault": false
     }
   ],

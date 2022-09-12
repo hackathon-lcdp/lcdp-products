@@ -1,7 +1,7 @@
 {
   "unpublishedPage": {
-    "name": "Page2",
-    "slug": "page2",
+    "name": "New_Product_Page",
+    "slug": "new-product-page",
     "layouts": [
       {
         "viewMode": false,
@@ -121,7 +121,9 @@
                       "resetFormOnClick": true,
                       "boxShadow": "none",
                       "widgetName": "Button1",
+                      "onClick": "{{add_product_query.run(() => showAlert('Product creation successful','success'), () => showAlert('Product creation failed','error'))}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "dynamicPropertyPathList": [],
                       "displayName": "Button",
                       "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
                       "searchTags": [
@@ -133,6 +135,11 @@
                       "type": "BUTTON_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onClick"
+                        }
+                      ],
                       "leftColumn": 46,
                       "dynamicBindingPathList": [
                         {
@@ -205,7 +212,7 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "product_name_input",
+                      "widgetName": "ProductNameInput",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                       "searchTags": [
@@ -245,6 +252,7 @@
                       "rightColumn": 56,
                       "widgetId": "l71ce6s3so",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "errorMessage": "Valid name must be great than 3 and less than 50",
                       "isVisible": true,
                       "label": "Name",
                       "version": 2,
@@ -259,7 +267,7 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "category_input",
+                      "widgetName": "CategorySelect",
                       "isFilterable": true,
                       "displayName": "Select",
                       "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
@@ -291,7 +299,7 @@
                         }
                       ],
                       "labelPosition": "Left",
-                      "options": "{{\n\n    _.map(\n\n      [\"vegetables\", \"bakery\", \"fruits\", \"beverages\", \"dairy\"],\n\n      function (category_input) {\n\n        return { label: category_input.toUpperCase(), value: category_input.toUpperCase() };\n\n      }\n\n    );\n\n}}",
+                      "options": "{{\n\n    _.map(\n\n      [\"vegetables\", \"bakery\", \"fruits\", \"beverages\", \"dairy\"],\n\n      function (CategorySelect) {\n\n        return { label: CategorySelect.toUpperCase(), value: CategorySelect.toUpperCase() };\n\n      }\n\n    );\n\n}}",
                       "placeholderText": "Select option",
                       "isDisabled": false,
                       "key": "5y9oyqwzi0",
@@ -311,7 +319,7 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "Input2",
+                      "widgetName": "MrpInput",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                       "searchTags": [
@@ -351,6 +359,7 @@
                       "rightColumn": 56,
                       "widgetId": "vkxdmhdir2",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "errorMessage": "Value must be greater than 0 and up to 2 decimal places",
                       "isVisible": true,
                       "label": "MRP",
                       "version": 2,
@@ -358,6 +367,7 @@
                       "labelAlignment": "left",
                       "renderMode": "CANVAS",
                       "isLoading": false,
+                      "regex": "^\\s*(?=.*[1-9])\\d*(?:\\.\\d{1,2})?\\s*$",
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "iconAlign": "left",
                       "defaultText": ""
@@ -393,14 +403,15 @@
         },
         "layoutOnLoadActions": [],
         "validOnPageLoadActions": false,
-        "id": "Page2",
+        "id": "New_Product_Page",
         "deleted": false,
         "policies": [],
         "userPermissions": []
       }
     ],
     "userPermissions": [],
-    "policies": []
+    "policies": [],
+    "isHidden": false
   },
   "deleted": false,
   "gitSyncId": "631f20981492f3662f03ad8d_631f21471492f3662f03ad97"

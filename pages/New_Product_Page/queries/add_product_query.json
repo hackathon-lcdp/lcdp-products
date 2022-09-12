@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "Products_Query",
+    "name": "add_product_query",
     "datasource": {
       "name": "Catalog_Database",
       "pluginId": "postgres-plugin",
@@ -13,30 +13,38 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Page1",
+    "pageId": "New_Product_Page",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT \"id\", \"productName\", \"category\", \"mrp\" FROM products ORDER BY \"id\";\n\n\n",
+      "body": "INSERT INTO products (\"productName\", \"category\", \"mrp\") VALUES ('{{ProductNameInput.text}}', '{{CategorySelect.selectedOptionValue}}', '{{MrpInput.text}}')",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ]
     },
-    "executeOnLoad": true,
-    "dynamicBindingPathList": [],
+    "executeOnLoad": false,
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "CategorySelect.selectedOptionValue",
+      "MrpInput.text",
+      "ProductNameInput.text"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Page1_Products_Query",
+  "id": "New_Product_Page_add_product_query",
   "deleted": false,
-  "gitSyncId": "631f20981492f3662f03ad8d_631f210f1492f3662f03ad94"
+  "gitSyncId": "631f20981492f3662f03ad8d_631f25b41492f3662f03ad9e"
 }
