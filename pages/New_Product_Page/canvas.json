@@ -282,7 +282,7 @@
                       "type": "SELECT_WIDGET",
                       "serverSideFiltering": false,
                       "hideCard": false,
-                      "defaultOptionValue": "GREEN",
+                      "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( `BAKERY`))(CategorySelect.options, CategorySelect.serverSideFiltering) }}",
                       "animateLoading": true,
                       "parentColumnSpace": 16.4375,
                       "dynamicTriggerPathList": [],
@@ -296,6 +296,9 @@
                         },
                         {
                           "key": "options"
+                        },
+                        {
+                          "key": "defaultOptionValue"
                         }
                       ],
                       "labelPosition": "Left",
