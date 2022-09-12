@@ -252,7 +252,7 @@
                       "labelAlignment": "left",
                       "renderMode": "CANVAS",
                       "isLoading": false,
-                      "regex": "^\\s*[a-zA-Z\\s]{3,50}\\s*$\n\n",
+                      "regex": "^\\s*[a-zA-Z\\s]{3,50}\\s*$",
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "iconAlign": "left",
                       "defaultText": ""
